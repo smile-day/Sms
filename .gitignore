@@ -1,0 +1,4 @@
+Client/node_modules/
+Client/npm-debug.log
+Client/dist/
+*config/*.js
