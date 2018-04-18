@@ -9,6 +9,17 @@ import Page4 from './views/nav2/Page4.vue'
 import Page5 from './views/nav2/Page5.vue'
 import Page6 from './views/nav3/Page6.vue'
 import echarts from './views/charts/echarts.vue'
+import Dashboard from './views/dashboard/dashboard.vue'
+import Orders from './views/orders/list.vue'
+
+// 我的大盘
+// 订单管理
+// 库存管理
+// 商品管理
+// 商品标签管理
+// 供应商管理
+// 客户管理
+// 进货管理
 
 let routes = [
     {
@@ -27,8 +38,28 @@ let routes = [
     {
         path: '/',
         component: Home,
+        name: '',
+        leaf: true,
+        iconCls: 'fa fa-tachometer',
+        children: [
+            { path: '/dashboard', component: Dashboard, name: '我的大盘' }
+        ]
+    },    
+    {
+        path: '/order',
+        component: Home,
+        name: '',
+        leaf: true,
+        iconCls: 'fa fa-archive',
+        children: [
+            { path: '/list', component: Orders, name: '订单管理' }
+        ]
+    },
+    {
+        path: '/',
+        component: Home,
         name: '导航一',
-        iconCls: 'fa fa-tachometer',//图标样式class
+        iconCls: 'fa fa-star-o',//图标样式class
         children: [
             { path: '/main', component: Main, name: '主页', hidden: true },
             { path: '/table', component: Table, name: 'Table' },
